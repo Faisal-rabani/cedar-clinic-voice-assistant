@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cedar Clinic · Appointment desk</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Cedar Clinic</span>
+    </div>
+    <span class="environment" id="environment">Demo clinic <span aria-hidden="true">·</span> IST</span>
+  </header>
+  <main>
+    <div class="intro">
+      <p class="date" id="today"></p>
+      <h1>Appointment desk</h1>
+    </div>
+    <div class="workspace">
+      <div class="schedule">
+        <section class="panel">
+          <div class="section-head">
+            <h2>Doctor availability</h2>
+            <label class="date-picker">Date <input id="date" type="date"></label>
+          </div>
+          <div id="doctors" class="doctors"><p class="empty">Loading schedule…</p></div>
+        </section>
+        <section class="panel appointments">
+          <div class="section-head"><h2>Appointments</h2><span class="count" id="count"></span></div>
+          <div id="appointments"></div>
+        </section>
+        <p id="schedule-status" role="status"></p>
+      </div>
+      <aside class="call" aria-labelledby="call-heading">
+        <div class="call-head">
+          <div class="voice-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div><h2 id="call-heading">Cedar voice assistant</h2><span id="call-status" role="status">Ready to call</span></div>
+          <time id="timer" datetime="PT0S">00:00</time>
+        </div>
+        <div class="transcript" id="transcript" role="log" aria-label="Live transcript">
+          <p class="call-empty">Start a call to check availability, book, or cancel an appointment.</p>
+        </div>
+        <p role="alert" id="call-error" hidden></p>
+        <div class="controls">
+          <button id="start" type="button">Start voice call</button>
+          <button id="mute" type="button" aria-pressed="false" hidden>Mute</button>
+          <button id="end" type="button" hidden>End call</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>
